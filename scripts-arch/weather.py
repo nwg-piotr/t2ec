@@ -51,7 +51,7 @@ def main():
                 exit(0)
 
             if sys.argv[i].upper() == '-N':
-                name = settings.dict["_weather"] + ":"
+                name = settings.dict["_weather"]
 
             if sys.argv[i].upper().startswith('-M'):
                 name = sys.argv[i][2::]
@@ -218,7 +218,7 @@ def main():
 
             details = icon + "\n"
             if city is not None:
-                details += settings.dict["_in_weather"] + " " + city + "\n"
+                details += settings.dict["_weather"] + " " + city + "\n"
             if temp is not None:
                 details += temp
             if desc is not None:
@@ -297,7 +297,7 @@ class Settings:
                 "# \n",
                 "# Delete this file if something goes wrong :)\n",
                 "# ------------------------------------------------\n",
-                "items = tpw\n",
+                "items = ct\n",
                 "api_key = your_key_here\n",
                 "city_id = 2643743\n",
                 "units = metric\n",
@@ -306,8 +306,7 @@ class Settings:
                 "\n",
                 "# You may translate your output below:\n",
                 "#\n",
-                "_weather = Weather\n",
-                "_in_weather = Weather in\n",
+                "_weather = Weather in\n",
                 "_wind = Wind\n",
                 "_cloudiness = Cloudiness\n",
                 "_pressure = Pressure\n",
@@ -318,14 +317,13 @@ class Settings:
             subprocess.call(["echo '" + ''.join(config) + "' > " + t2ec_dir + "/weatherrc"], shell=True)
 
         # Set default values
-        self.items = "tpw"
+        self.items = "ct"
         self.api_key = ""
         self.city_id = "2643743"  # London, UK
         self.units = "metric"
         self.lang = None
         self.img_path = None
         self.dict = {'_weather': 'Weather',
-                     '_in_weather': 'Weather in',
                      '_wind': 'Wind',
                      '_cloudiness': 'Cloudiness',
                      '_pressure': 'Pressure',
@@ -353,8 +351,6 @@ class Settings:
 
                 elif line.startswith("_weather"):
                     self.dict["_weather"] = line.split("=")[1].strip()
-                elif line.startswith("_in_weather"):
-                    self.dict["_in_weather"] = line.split("=")[1].strip()
                 elif line.startswith("_wind"):
                     self.dict["_wind"] = line.split("=")[1].strip()
                 elif line.startswith("_cloudiness"):
