@@ -168,7 +168,7 @@ Assign the command above to a mouse click event. Optional `<city_id>` you only n
 
 ### Configuration:
 
-At the first use, the script creates the `~/.t2ec/weatherrc` config file. You need to edit at least 2 values.
+At the first use, the script creates the `~/.t2ecol/weatherrc` config file. You need to edit at least 2 values.
 
 ```
 items = ct
