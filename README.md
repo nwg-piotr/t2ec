@@ -131,7 +131,7 @@ jgmenu --config-file=${config_file} --csv-file=${menu_file}
 
 ## t2ec --weather
 
-This script retrieves ad displays weather data from [http://openweathermap.org](http://openweathermap.org) © 2012 — 2018 OpenWeatherMap, Inc.
+This script retrieves and displays weather data from [http://openweathermap.org](http://openweathermap.org) © 2012 — 2018 OpenWeatherMap, Inc.
 
 ![t2ec --weather](http://nwg.pl/wiki-tint2-executors/weather.png)
 
