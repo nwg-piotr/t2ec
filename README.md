@@ -42,7 +42,9 @@ For `psuinfo` commands install the [psuinfo package](https://aur.archlinux.org/p
 
 `t2ec --wifi [-N] | [-M'custom name']`
 
-`t2ec --update -C[pacaur | trizen | yay] [-N] | [-M<custom_name]` [read more](https://github.com/nwg-piotr/tint2-executors/blob/master/arch-package/README.md#t2ec---update-command)
+`t2ec --update -C[pacaur | trizen | yay] [-N] | [-M<custom_name]` [read more](https://github.com/nwg-piotr/t2ec#t2ec---update-command)
+
+`t2ec --weather [-I<items>] [-A<api_key>] [-C<city_id>] [-U<units>] [-L<lang>]`
 
 ## Commands to assign to mouse events:
 
@@ -57,6 +59,8 @@ For `psuinfo` commands install the [psuinfo package](https://aur.archlinux.org/p
 `t2ec --update -U<terminal>[:aur_helper]`
 
 `t2ec --update -O` displays n(O)tifiction with the last saved updates list
+
+`t2ec --weather -D[<city_id>]`
 
 
 *Remember to uncheck 'Show icon' in executor if textual display selected!*
