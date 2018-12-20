@@ -1,6 +1,6 @@
 # t2ec
 
-Collection of scripts to use in the Tint2 panel executors, which provide system information and controls as icons or textual display. Also find more in the [psuinfo](https://github.com/nwg-piotr/psuinfo) project.
+Collection of scripts to provide system information and controls as icons or textual display. Aimed at [Tint2](https://gitlab.com/o9000/tint2), possible to apply in other panels. Also check the [psuinfo](https://github.com/nwg-piotr/psuinfo) project.
 
 ___
 Same as [psuinfo](https://github.com/nwg-piotr/psuinfo), these scripts were originally developed within the [tint2-executors](https://github.com/nwg-piotr/tint2-executors) project, and a number of people contributed to it:
