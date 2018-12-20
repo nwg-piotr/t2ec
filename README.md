@@ -2,6 +2,17 @@
 
 Collection of scripts to use in the Tint2 panel executors, which provide system information and controls as icons or textual display. Also find more in the [psuinfo](https://github.com/nwg-piotr/psuinfo) project.
 
+___
+Same as [psuinfo](https://github.com/nwg-piotr/psuinfo), these scripts were originally developed within the [tint2-executors](https://github.com/nwg-piotr/tint2-executors) project, and a number of people contributed to it:
+
+- [edskeye](https://github.com/edskeye) is the author of all icons, and also a tester from the very beginning;
+- [natemaia](https://github.com/natemaia) improved the `t2ec --volume` command (later I applied similar solution in several other scripts);
+- [johanmalm](https://github.com/johanmalm) provided the idea and a code snippet to attach [jgmenu](https://github.com/johanmalm/jgmenu);
+- [PackRat](https://github.com/PackRat-SC2018), [Head_on_a_Stick](https://forum.archlabslinux.com/u/head_on_a_stick/summary), [sevenday4](https://forum.archlabslinux.com/u/sevenday4) have always good ideas.
+
+Many thanks to you all!
+___
+
 ```bash
 t2ec --script [argument]
 ```
