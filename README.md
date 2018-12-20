@@ -129,4 +129,24 @@ EOF
 jgmenu --config-file=${config_file} --csv-file=${menu_file}
 ```
 
+## t2ec --weather
+
+This script retrieves ad displays weather data from [http://openweathermap.org](http://openweathermap.org) © 2012 — 2018 OpenWeatherMap, Inc.
+
+![t2ec --weather](http://nwg.pl/wiki-tint2-executors/weather.png)
+
+### Executor
+
+Icon display:
+
+`t2ec --weather`
+
+"Show icons" and "Cache icons" checked. Continous output = 2.
+
+Textual display:
+
+`t2ec --weather -N | -M"My own text here"` (or just `-M` for no name)
+
+"Show icons" unchecked. Continous output = 1.
+
 
