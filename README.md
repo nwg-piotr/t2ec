@@ -152,19 +152,19 @@ Icon display:
 
 `t2ec --weather`
 
-"Show icons" and "Cache icons" checked. Continous output = 2.
+*"Show icons"* and *"Cache icons"* checked. *Continous output* = 2.
 
 Textual display:
 
 `t2ec --weather -N | -M"My own text here"` (or just `-M` for no name)
 
-"Show icons" unchecked. Continous output = 1.
+*"Show icons"* unchecked. *Continous output* = 1.
 
 ### Details notification:
 
 `t2ec --weather -D[<city_id>]`
 
-Assign the command above to a mouse click event. Optional `<city_id>` you only need if the executor displays data for another city tan specified in the config file (see below).
+Assign the command above to a mouse click event. Optional `<city_id>` you only need if the executor displays data for another city than specified in the config file (see below).
 
 ### Configuration:
 
@@ -189,11 +189,11 @@ _sunrise = Sunrise
 _sunset = Sunset
 ```
 
-1. Obtain API key at [http://openweathermap.org](http://openweathermap.org), enter it in the `api_key` field;
+1. Obtain an API key at [http://openweathermap.org](http://openweathermap.org), enter it in the `api_key` field;
 2. find your city ID at [https://openweathermap.org/find](https://openweathermap.org/find), enter in the `city_id` field.
 3. You may also replace default `metric` units with `imperial`, if you need to.
 
-The `items` filed defines data components to be shown:
+The `items` field defines data components to be shown:
 
 `[c]ity name, [s]hort description, [d]escription, [t]emperature, [p]ressure, [h]umidity, [w]ind`
 
@@ -203,7 +203,11 @@ If default icons by @edskeye don't go well with your desktop layout, you may unc
 
 This small script does not really provide internalization. However, you may translate the display into your language by editing fields which names start from `_`, e.g.:
 
-`_weather = Pogoda w` for "Weather in" in Polish.
+```
+_weather = Pogoda w
+``` 
+
+for "Weather in" in Polish.
 
 ### Overriding weatherrc settings:
 
