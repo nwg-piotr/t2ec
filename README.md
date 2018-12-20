@@ -1,22 +1,33 @@
 # t2ec
 
-To simplify installation and usage of the scripts which are not a part of the [psuinfo](https://github.com/nwg-piotr/psuinfo) package, I thought to give them a PKGBUILD file, and a common command, too:
+Collection of scripts to provide system information and controls as icons or textual display. Aimed at [Tint2](https://gitlab.com/o9000/tint2), possible to apply in other panels. Also check the [psuinfo](https://github.com/nwg-piotr/psuinfo) project.
+
+___
+Same as [psuinfo](https://github.com/nwg-piotr/psuinfo), these scripts were originally developed within the [tint2-executors](https://github.com/nwg-piotr/tint2-executors) project, and a number of people contributed to it:
+
+- [edskeye](https://github.com/edskeye) is the author of all icons, and also a tester from the very beginning;
+- [natemaia](https://github.com/natemaia) improved the `t2ec --volume` command (later I applied similar solution in several other scripts);
+- [johanmalm](https://github.com/johanmalm) provided the idea and a code snippet to attach [jgmenu](https://github.com/johanmalm/jgmenu);
+- [PackRat](https://github.com/PackRat-SC2018), [Head_on_a_Stick](https://forum.archlabslinux.com/u/head_on_a_stick/summary), [sevenday4](https://forum.archlabslinux.com/u/sevenday4) have always good ideas.
+
+Many thanks to you all!
+___
 
 ```bash
-t2ec --script [argument]
+t2ec --script [argument] [argument]
 ```
 
 ## Example:
 
 `t2ec --volume` - to draw the volume icon + current volume level
 
-`t2ec --volume -N` - to print "Vol: " + current volume level
+`t2ec --volume -N` - to print "Vol: 20%" instead of the icon
 
 `t2ec --volume [up] | [down] | [toggle] | [level]` - to use as mouse event commands
 
-Together with the [psuinfo](https://github.com/nwg-piotr/psuinfo) package, all the most useful scripts are now unified and given common syntax:
+#### Together with the [psuinfo](https://github.com/nwg-piotr/psuinfo) package, all the most useful scripts are now unified and given similar syntax:
 
-![scripts in action](http://nwg.pl/wiki-tint2-executors/my-panels-261118.jpg)
+![scripts in action](http://nwg.pl/wiki-tint2-executors/my-panels-201218.jpg)
 
 ## Installation:
 
@@ -36,7 +47,7 @@ For `psuinfo` commands install the [psuinfo package](https://aur.archlinux.org/p
 
 `t2ec --brightness [-N]`
 
-`t2ec --lbrightness [-N]` (for `light-git` optional package)
+`t2ec --lbrightness [-N]` (for `ligh` optional package)
 
 `t2ec --battery [-l] | [-N]` (`[-l]` for icon + level, `[-N]` for "Bri: " + level
 
@@ -141,23 +152,23 @@ Icon display:
 
 `t2ec --weather`
 
-"Show icons" and "Cache icons" checked. Continous output = 2.
+*"Show icons"* and *"Cache icons"* checked. *Continous output* = 2.
 
 Textual display:
 
 `t2ec --weather -N | -M"My own text here"` (or just `-M` for no name)
 
-"Show icons" unchecked. Continous output = 1.
+*"Show icons"* unchecked. *Continous output* = 1.
 
 ### Details notification:
 
 `t2ec --weather -D[<city_id>]`
 
-Assign the command above to a mouse click event. Optional `<city_id>` you only need if the executor displays data for another city tan specified in the config file (see below).
+Assign the command above to a mouse click event. Optional `<city_id>` you only need if the executor displays data for another city than specified in the config file (see below).
 
 ### Configuration:
 
-At the first use, the script creates the `~/.t2ec/weatherrc` config file. You need to edit at least 2 values.
+At the first use, the script creates the `~/.t2ecol/weatherrc` config file. You need to edit at least 2 values.
 
 ```
 items = ct
@@ -178,11 +189,11 @@ _sunrise = Sunrise
 _sunset = Sunset
 ```
 
-1. Obtain API key at [http://openweathermap.org](http://openweathermap.org), enter it in the `api_key` field;
+1. Obtain an API key at [http://openweathermap.org](http://openweathermap.org), enter it in the `api_key` field;
 2. find your city ID at [https://openweathermap.org/find](https://openweathermap.org/find), enter in the `city_id` field.
 3. You may also replace default `metric` units with `imperial`, if you need to.
 
-The `items` filed defines data components to be shown:
+The `items` field defines data components to be shown:
 
 `[c]ity name, [s]hort description, [d]escription, [t]emperature, [p]ressure, [h]umidity, [w]ind`
 
@@ -192,7 +203,11 @@ If default icons by @edskeye don't go well with your desktop layout, you may unc
 
 This small script does not really provide internalization. However, you may translate the display into your language by editing fields which names start from `_`, e.g.:
 
-`_weather = Pogoda w` for "Weather in" in Polish.
+```
+_weather = Pogoda w
+``` 
+
+for "Weather in" in Polish.
 
 ### Overriding weatherrc settings:
 
