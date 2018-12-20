@@ -135,7 +135,7 @@ This script retrieves ad displays weather data from [http://openweathermap.org](
 
 ![t2ec --weather](http://nwg.pl/wiki-tint2-executors/weather.png)
 
-### Executor
+### Executor:
 
 Icon display:
 
@@ -149,4 +149,45 @@ Textual display:
 
 "Show icons" unchecked. Continous output = 1.
 
+### Details notification:
 
+`t2ec --weather -D[<city_id>]`
+
+Assign the command above to a mouse click event. Optional `<city_id>` you only need if the executor displays data for another city tan specified in the config file (see below).
+
+### Configuration:
+
+At the first use, the script creates the `~/.t2ec/weatherrc` config file. You need to edit at least 2 values.
+
+```
+items = ct
+api_key = your_api_key_kere
+city_id = 2643743
+units = metric
+#lang = en
+#img_path = /home/user/my_custom_icons/
+
+# You may translate your output below:
+#
+_weather = Weather in
+_wind = Wind
+_cloudiness = Cloudiness
+_pressure = Pressure
+_humidity = Humidity
+_sunrise = Sunrise
+_sunset = Sunset
+```
+
+1. Obtain API key at [http://openweathermap.org](http://openweathermap.org), enter it in the `api_key` field;
+2. find your city ID at [https://openweathermap.org/find](https://openweathermap.org/find), enter in the `city_id` field.
+3. You may also replace default `metric` units with `imperial`, if you need to.
+
+The script uses the system $LANG variable by default. In case it didn't work for you, or you just wanted another language, uncomment the `#lang = en` line, and replace English with your own lang (2 chars).
+
+If default icons by @edskeye don't go well with your desktop layout, you may uncomment the `#img_path = /home/user/my_custom_icons/` line and enter a path to own icons. Originals you'll find in `/usr/share/t2ec/ow*-svg`.
+
+This small script does not really provide internalization. However, you may translate the display into your language by editing fields which names start from `_`, e.g.:
+
+`_weather = Pogoda w` for "Weather in" in Polish.
+
+### Overriding weatherrc settings:
