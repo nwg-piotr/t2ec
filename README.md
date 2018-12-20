@@ -1,6 +1,6 @@
 # t2ec
 
-To simplify installation and usage of the scripts which are not a part of the [psuinfo](https://github.com/nwg-piotr/psuinfo) package, I thought to give them a PKGBUILD file, and a common command, too:
+Collection of scripts to use in the Tint2 panel executors, which provide system information and controls as icons or textual display. Also find more in the [psuinfo](https://github.com/nwg-piotr/psuinfo) project.
 
 ```bash
 t2ec --script [argument]
@@ -16,7 +16,7 @@ t2ec --script [argument]
 
 Together with the [psuinfo](https://github.com/nwg-piotr/psuinfo) package, all the most useful scripts are now unified and given common syntax:
 
-![scripts in action](http://nwg.pl/wiki-tint2-executors/my-panels-261118.jpg)
+![scripts in action](http://nwg.pl/wiki-tint2-executors/my-panels-201218.jpg)
 
 ## Installation:
 
