@@ -44,7 +44,7 @@ For `psuinfo` commands install the [psuinfo package](https://aur.archlinux.org/p
 
 `t2ec --update -C[pacaur | trizen | yay] [-N] | [-M<custom_name]` [read more](https://github.com/nwg-piotr/t2ec#t2ec---update-command)
 
-`t2ec --weather [-I<items>] [-A<api_key>] [-C<city_id>] [-U<units>] [-L<lang>]`
+`t2ec --weather [-I<items>] [-A<api_key>] [-C<city_id>] [-U<units>] [-L<lang>]` [read more](https://github.com/nwg-piotr/t2ec#t2ec---weather)
 
 ## Commands to assign to mouse events:
 
@@ -182,7 +182,11 @@ _sunset = Sunset
 2. find your city ID at [https://openweathermap.org/find](https://openweathermap.org/find), enter in the `city_id` field.
 3. You may also replace default `metric` units with `imperial`, if you need to.
 
-The script uses the system $LANG variable by default. In case it didn't work for you, or you just wanted another language, uncomment the `#lang = en` line, and replace English with your own lang (2 chars).
+The `items` filed defines data components to be shown:
+
+`[c]ity name, [s]hort description, [d]escription, [t]emperature, [p]ressure, [h]umidity, [w]ind`
+
+The script uses the system $LANG variable by default. In case it didn't work for you, or you just wanted another language, uncomment the `#lang = en` line, and replace English with your own lang code (2 chars).
 
 If default icons by @edskeye don't go well with your desktop layout, you may uncomment the `#img_path = /home/user/my_custom_icons/` line and enter a path to own icons. Originals you'll find in `/usr/share/t2ec/ow*-svg`.
 
@@ -191,3 +195,13 @@ This small script does not really provide internalization. However, you may tran
 `_weather = Pogoda w` for "Weather in" in Polish.
 
 ### Overriding weatherrc settings:
+
+If you need to see data for more than one location, you may override default `~/.t2ec/weatherrc` config setting:
+
+```
+t2ec --weather [-I<items>] [-A<api_key>] [-C<city_id>] [-U<metric>|<imperial>] [-L<lang>]
+```
+
+If you specified `<city_id>` in the main command, to see relevant data in the details notification you also need to do so:
+
+`t2ec --weather -D<city_id>`
