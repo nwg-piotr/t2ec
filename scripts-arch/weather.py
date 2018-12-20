@@ -365,7 +365,10 @@ class Settings:
                     self.dict["_sunset"] = line.split("=")[1].strip()
 
         if self.lang is None:
-            loc = locale.getdefaultlocale()[0][:2]
+            try:
+                loc = locale.getdefaultlocale()[0][:2]
+            except TypeError:
+                loc = ""
             self.lang = loc if loc else "en"
 
 
