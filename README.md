@@ -25,7 +25,8 @@ t2ec --script [argument]
 
 `t2ec --volume [up] | [down] | [toggle] | [level]` - to use as mouse event commands
 
-Together with the [psuinfo](https://github.com/nwg-piotr/psuinfo) package, all the most useful scripts are now unified and given common syntax:
+
+**Together with the [psuinfo](https://github.com/nwg-piotr/psuinfo) package, all the most useful scripts are now unified and given common syntax:**
 
 ![scripts in action](http://nwg.pl/wiki-tint2-executors/my-panels-201218.jpg)
 
