@@ -47,7 +47,7 @@ For `psuinfo` commands install the [psuinfo package](https://aur.archlinux.org/p
 
 `t2ec --brightness [-N]`
 
-`t2ec --lbrightness [-N]` (for `light-git` optional package)
+`t2ec --lbrightness [-N]` (for `ligh` optional package)
 
 `t2ec --battery [-l] | [-N]` (`[-l]` for icon + level, `[-N]` for "Bri: " + level
 
