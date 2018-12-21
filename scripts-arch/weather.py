@@ -100,7 +100,7 @@ def main():
 
     if response is not None:
         # Convert JSON to object - after DS. at https://stackoverflow.com/a/15882054/4040598
-        owm = json.loads(response, object_hook=lambda d: namedtuple('t', d.keys())(*d.values()))
+        owm = json.loads(response, object_hook=lambda d: namedtuple('t', d.keys(), rename=True)(*d.values()))
 
         icons = {'01d': 'ow-01d.svg',
                  '01n': 'ow-01n.svg',
