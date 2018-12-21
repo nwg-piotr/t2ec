@@ -223,6 +223,8 @@ If you specified `<city_id>` in the main command, to see relevant data in the de
 
 ## CHANGELOG
 
+v1.1-3 Fix to vulnerability causing ValueError on numeric field names in openwathermap JSON
+
 v1.1-2 Error handling for locale.getdefaultlocale() TypeError in the weather.py script
 
 v1.1-1 Initial release as a separate project.
