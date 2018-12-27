@@ -61,7 +61,7 @@ For `psuinfo` commands install the [psuinfo package](https://aur.archlinux.org/p
 
 `t2ec --desktop [next] | [prev] | [<number>]`
 
-`t2ec --volume [up] | [down] | [<level>]`
+`t2ec --volume [up] | [down] | [toggle] | [<level>]`
 
 `t2ec --brightness [up] | [down] | [<level>]`
 
