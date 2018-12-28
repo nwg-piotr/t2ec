@@ -1,5 +1,7 @@
 # t2ec
 
+[![Packaging status](https://repology.org/badge/vertical-allrepos/t2ec.svg)](https://repology.org/metapackage/t2ec/versions)
+
 Collection of scripts to provide system information and controls as icons or textual display. Aimed at [Tint2](https://gitlab.com/o9000/tint2), possible to apply in other panels. Also check the [psuinfo](https://github.com/nwg-piotr/psuinfo) project.
 
 ___
