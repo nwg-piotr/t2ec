@@ -90,10 +90,10 @@ def main():
                 print("Up-to-date")
         else:
             if num_upd > 0:
-                os.system("echo ~/PycharmProjects/t2ec/images/void-update-notify.svg")
+                os.system("echo /usr/share/t2ec/void-update-notify.svg")
                 os.system("echo " + str(num_upd))
             else:
-                os.system("echo ~/PycharmProjects/t2ec/images/void-update.svg")
+                os.system("echo /usr/share/t2ec/void-update.svg")
                 os.system("echo ''")
 
     if do_update:
@@ -107,7 +107,7 @@ def main():
 
 def notify(updates):
     subprocess.call(
-        ['notify-send', "Pending updates:", "--icon=~/PycharmProjects/t2ec/images/void-update-notify.svg", "--expire-time=5000", updates])
+        ['notify-send', "Pending updates:", "--icon=/usr/share/t2ec/void-update-notify.svg", "--expire-time=5000", updates])
 
 
 def show_menu():
