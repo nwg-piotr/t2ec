@@ -5,23 +5,17 @@
 # Author: Piotr Miller
 # e-mail: nwg.piotr@gmail.com
 # Website: http://nwg.pl
-# Project: https://github.com/nwg-piotr/tint2-executors
+# Project: https://github.com/nwg-piotr/t2ec
 # License: GPL3
 
-# Credits: RaphaelRochet/arch-update
-# https://github.com/RaphaelRochet/arch-update
-# Icon by @edskeye
+Arguments [-C] | [-U<aur_helper> <terminal>] | [menu] | -[O] [-N] | [-M<custom_name>]
 
-Arguments [-C<aur_helper>] | [-U<aur_helper> <terminal>] | [menu] | -[O] [-N] | [-M<custom_name>]
-
-[-C<aur_helper>] - check updates
-[-U<terminal>,<aur_helper>] - your AUR helper name
-[-O] - show pending updates as notification
+[-C] - check updates
+[-U<terminal>] - your terminal name
+[-O] - display pending updates with notify-send
 [-N] - name instead of icon
 [menu] - show context jgmenu
 
-Dependencies: `pacman-contrib`
-Optional: `pacaur` | `trizen` | `yay`, `jgmenu`
 """
 
 import sys
@@ -31,16 +25,12 @@ import subprocess
 
 def main():
     name = None
-    helper_name, terminal_name, helper_cmd, updates = "", "", "", ""
+    terminal_name, helper_cmd, updates = "", "", ""
     do_check, do_update, do_notify = False, False, False
 
-    tmp_file = os.getenv("HOME") + "/.arch-updates"
+    tmp_file = os.getenv("HOME") + "/.void-updates"
 
-    check_command = 'sh -c "checkupdates > ' + tmp_file
-
-    aur_check_commands = {'pacaur': 'pacaur check -q',
-                          'trizen': 'trizen -Qqu -a',
-                          'yay': 'yay -Qqu -a'}
+    check_command = "xbps-install -Suvn | grep ' update ' | awk '{print $1}' > " + tmp_file
 
     if len(sys.argv) > 1:
         for i in range(1, len(sys.argv)):
@@ -56,14 +46,6 @@ def main():
                 break
 
             if sys.argv[i].upper().startswith('-C'):
-                try:
-                    helper_cmd = aur_check_commands[sys.argv[i][2::]]
-                except KeyError:
-                    helper_cmd = ""
-                    pass
-                if helper_cmd:
-                    check_command += " && " + helper_cmd
-                check_command += ' >> ' + tmp_file + '"'
                 do_check = True
                 do_update = False
                 do_notify = False
@@ -71,10 +53,6 @@ def main():
             if sys.argv[i].upper().startswith('-U'):
                 tools = sys.argv[i][2::].split(":")
                 terminal_name = tools[0]
-                try:
-                    helper_name = tools[1]
-                except IndexError:
-                    helper_name = "sudo pacman"
                 do_check = False
                 do_update = True
                 do_notify = False
@@ -86,11 +64,10 @@ def main():
                 name = sys.argv[i][2::]
 
             if sys.argv[i].upper() == '-H' or sys.argv[i].upper() == '-HELP':
-                print("\nt2ec --update -C[aur_helper] | -U<terminal>[:aur_helper] | [-O] [-N] | [-M<custom_name>]\n")
-                print("-C[aur_helper] - (C)heck updates with pacman and optionally AUR helper")
-                print(" example: t2ec --update -Ctrizen\n")
-                print("-U<terminal>[:aur_helper] - (U)pdate in <terminal> with pacman or AUR helper")
-                print(" example: t2ec --update -Uxfce4-terminal:trizen\n")
+                print("\nt2ec --update -C | -U<terminal> | [-O] [-N] | [-M<custom_name>]\n")
+                print("-C - (C)heck updates with xbps-install -Suvn")
+                print("-U<terminal> - (U)pdate in the <terminal> you use")
+                print(" example: t2ec --update -Uxfce4-terminal\n")
                 print("-O - display saved pending updates as n(O)tification")
                 print("-N - print (N)ame instead of icon")
                 print("-M<custom_name> - print custom na(M)e instead of icon\n")
@@ -113,14 +90,14 @@ def main():
                 print("Up-to-date")
         else:
             if num_upd > 0:
-                os.system("echo /usr/share/t2ec/arch-icon-notify.svg")
+                os.system("echo ~/PycharmProjects/t2ec/images/void-update-notify.svg")
                 os.system("echo " + str(num_upd))
             else:
-                os.system("echo /usr/share/t2ec/arch-icon.svg")
+                os.system("echo ~/PycharmProjects/t2ec/images/void-update.svg")
                 os.system("echo ''")
 
     if do_update:
-        command = terminal_name + ' -e \'sh -c \"' + helper_name + ' -Syu; echo Press enter to exit; read; killall -SIGUSR1 tint2\"\''
+        command = terminal_name + ' -e \'sh -c \"sudo xbps-install -Suv; echo Press enter to exit; read; killall -SIGUSR1 tint2\"\''
         subprocess.call(command, shell=True)
 
     if do_notify:
@@ -130,7 +107,7 @@ def main():
 
 def notify(updates):
     subprocess.call(
-        ['notify-send', "Pending updates:", "--icon=/usr/share/t2ec/arch-update48.svg", "--expire-time=5000", updates])
+        ['notify-send', "Pending updates:", "--icon=~/PycharmProjects/t2ec/images/void-update-notify.svg", "--expire-time=5000", updates])
 
 
 def show_menu():
