@@ -8,12 +8,10 @@ This script retrieves weather data from http://openweathermap.org © 2012 — 20
 3. enter both values in the ~/t2ecol/weatherrc file;
 4. edit other values if necessary.
 
-README: https://github.com/nwg-piotr/tint2-executors/tree/master/arch-package
-
 Author: Piotr Miller
 e-mail: nwg.piotr@gmail.com
 Website: http://nwg.pl
-Project: https://github.com/nwg-piotr/tint2-executors
+Project: https://github.com/nwg-piotr/t2ec
 License: GPL3
 
 Arguments to override some ~/t2ecol/weatherrc config file values:

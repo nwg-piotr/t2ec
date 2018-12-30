@@ -11,7 +11,7 @@ This script retrieves weather data from http://openweathermap.org © 2012 — 20
 Author: Piotr Miller
 e-mail: nwg.piotr@gmail.com
 Website: http://nwg.pl
-Project: https://github.com/nwg-piotr/tint2-executors
+Project: https://github.com/nwg-piotr/t2ec
 License: GPL3
 
 Arguments to override some ~/t2ecol/weatherrc config file values:

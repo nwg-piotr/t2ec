@@ -5,7 +5,7 @@
 # Authors: Piotr Miller, @natemaia
 # e-mail: nwg.piotr@gmail.com
 # Website: http://nwg.pl
-# Project: https://github.com/nwg-piotr/tint2-executors
+# Project: https://github.com/nwg-piotr/t2ec
 # License: GPL3
 
 # Dependencies: `alsa-utils`
