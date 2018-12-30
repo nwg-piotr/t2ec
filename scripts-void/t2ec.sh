@@ -20,6 +20,8 @@ elif [[ $1 == --battery ]]; then
     exec /usr/lib/t2ec/battery-icon.sh $2
 elif [[ $1 == --wifi ]]; then
     exec /usr/lib/t2ec/wifi-name.sh "$2"
+elif [[ $1 == --update ]]; then
+    exec /usr/lib/t2ec/void-update.py "${@:2}"
 elif [[ $1 == --weather ]]; then
     exec /usr/lib/t2ec/weather.py "${@:2}"
 elif [[ $1 == "-h" ]] || [[ $1 == "--help" ]]; then
