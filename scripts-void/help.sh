@@ -17,3 +17,5 @@ echo "--update -C | -U<terminal> | [-O] [-N] | [-M<custom_name>] | [-h] | [--hel
 printf "\n[menu] argument after --command displays context menu (if jgmenu package installed). Edit templates in ~/.t2ecol folder to customize menus.\n"
 printf "\n[-N] - displays name instead of icon in tint2 panel. Uncheck 'Show icon' in executor!\n\n"
 echo "In --battery command [-l] - appends level text to the icon | [-N] displays textual name and level instead of icon"
+
+printf "\n--paswitch - displays jgmenu to switch audio output.\n\n"

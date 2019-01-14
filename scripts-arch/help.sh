@@ -19,4 +19,6 @@ printf "\n[menu] argument after --command displays context menu (if jgmenu packa
 printf "\n[-N] - displays name instead of icon in tint2 panel. Uncheck 'Show icon' in executor!\n\n"
 echo "In --battery command [-l] - appends level text to the icon | [-N] displays textual name and level instead of icon"
 
-printf "\n--zbox [bri] | [vol] - displays Zenity box to set volume | brightness level. Depends on 'zenity' and 'rof-git' optional packages.\n\n"
+printf "\n--zbox [bri] | [vol] - displays Zenity box to set volume | brightness level. Depends on 'zenity' and 'rof-git' optional packages.\n"
+
+printf "\n--paswitch - displays jgmenu to switch audio output.\n\n"

@@ -10,6 +10,8 @@ if [[ $1 == --desktop ]]; then
     exec /usr/lib/t2ec/desktop.py $2
 elif [[ $1 == --bbswitch ]]; then
     exec /usr/lib/t2ec/bbswitch-status-temp.sh $2
+elif [[ $1 == --paswitch ]]; then
+    exec /usr/lib/t2ec/pa-jgmenu.py
 elif [[ $1 == --volume ]]; then
     exec /usr/lib/t2ec/volume-icon.sh $2
 elif [[ $1 == --brightness ]]; then
