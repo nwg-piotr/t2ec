@@ -54,7 +54,7 @@ def main():
 
     # Use previously saved tuples (sink_number, output_description) to create jgmenu entries
     for output in outputs:
-        jgmenu.append(output[1] + ", " + "/usr/lib/t2ec/scripts-arch/pa-switch-output.sh " + output[0])
+        jgmenu.append(output[1] + ", " + "/usr/lib/t2ec/pa-switch-output.sh " + output[0])
 
     jgmenu.append("EOF\n")
     jgmenu.append("jgmenu --config-file=${config_file} --csv-file=${menu_file}")
