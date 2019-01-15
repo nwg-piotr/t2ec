@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # This script display an appropriate volume icon according to the volume level
 
@@ -9,14 +9,14 @@
 # License: GPL3
 
 # Dependencies: `alsa-utils`
-# arguments: [up] | [down] | [<level>] | [-N]
+# arguments: [up] | [down] | [toggle] | [<level>] [-N]
 
 if [[ $1 == up ]]; then
     amixer set Master 5%+ -q
 elif [[ $1 == down ]]; then
     amixer set Master 5%- -q
 elif [[ $1 == toggle ]]; then
-    amixer set Master toggle -q
+    amixer sset Master toggle -q
 else
     # If none of above, check if argument is a valid int, set volume if so
     if [[ $(($1)) == $1 ]] && [[ "$1" -ge 0 ]] && [[ "$1" -le 100 ]]; then
@@ -24,7 +24,7 @@ else
     fi
 fi
 
-if [[ "$(amixer sget Master | awk -F'[][]' '/Right:|Mono:/ && NF > 1 {print $4}')" = "on" ]]; then
+if [[ "$(amixer sget Master | grep -e 'Right:' -e 'Mono:')" == *"[on]"* ]]; then
 
     # search for the lines containing 'Right:' or 'Mono:', when more than 1 field exists
     # we strip the trailing '%' and round it up with printf "%0.0f" just in case

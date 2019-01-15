@@ -16,7 +16,6 @@ if [[ $1 == up ]]; then
 elif [[ $1 == down ]]; then
     amixer set Master 5%- -q
 elif [[ $1 == toggle ]]; then
-#    amixer set Master toggle -q
     amixer sset Master toggle -q
 else
     # If none of above, check if argument is a valid int, set volume if so
@@ -25,7 +24,6 @@ else
     fi
 fi
 
-#if [[ "$(amixer sget Master | awk -F'[][]' '/Right:|Mono:/ && NF > 1 {print $4}')" = "on" ]]; then
 if [[ "$(amixer sget Master | grep -e 'Right:' -e 'Mono:')" == *"[on]"* ]]; then
 
     # search for the lines containing 'Right:' or 'Mono:', when more than 1 field exists
