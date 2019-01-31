@@ -145,7 +145,7 @@ def main():
             except AttributeError:
                 pass
 
-            unit = "℉" if settings.units == "imperial" else "℃"
+            unit = "°F" if settings.units == "imperial" else "°C"
             try:
                 temp = str(round(float(str(getattr(owm.main, "temp"))), 1)) + unit
             except AttributeError:
@@ -211,6 +211,8 @@ def main():
                     output += " " + humidity + " "
                 if settings.items[i] == "w" and wind is not None:
                     output += " " + wind + " "
+                if settings.items[i] == "S" and sunrise is not None and sunset is not None:
+                    output += " " + settings.dict["_sunrise"] + sunrise + " " + settings.dict["_sunset"] + sunset + " "
 
             print(re.sub(' +', ' ', output).strip())
 
@@ -266,7 +268,7 @@ def print_help():
 
     print("\nt2ec --weather [-I<items>] [-A<api_key>] [-C<city_id>] [-U<units>] [-L<lang>]")
 
-    print("\n<items>: [s]hort description, [d]escription, [t]emperature, [p]ressure, [h]umidity, [w]ind, [c]ity name")
+    print("\n<items>: [s]hort description, [d]escription, [t]emperature, [p]ressure, [h]umidity, [w]ind, [c]ity name, [S]unrise/sunset")
 
     print("\nTo show details as a notification:")
 

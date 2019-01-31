@@ -145,7 +145,7 @@ def main():
             except AttributeError:
                 pass
 
-            unit = "℉" if settings.units == "imperial" else "℃"
+            unit = "°F" if settings.units == "imperial" else "°C"
             try:
                 temp = str(round(float(str(getattr(owm.main, "temp"))), 1)) + unit
             except AttributeError:
@@ -212,7 +212,7 @@ def main():
                 if settings.items[i] == "w" and wind is not None:
                     output += " " + wind + " "
                 if settings.items[i] == "S" and sunrise is not None and sunset is not None:
-                    output += " " + settings.dict["_sunrise"] + " " + sunrise + " " + settings.dict["_sunset"] + " " + sunset + " "
+                    output += " " + settings.dict["_sunrise"] + sunrise + " " + settings.dict["_sunset"] + sunset + " "
 
             print(re.sub(' +', ' ', output).strip())
 
