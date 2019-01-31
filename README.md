@@ -65,6 +65,8 @@ For `psuinfo` commands install the [psuinfo package](https://aur.archlinux.org/p
 
 `t2ec --volume [up] | [down] | [toggle] | [<level>]`
 
+`t2ec --paswitch` (assign to the volume icon click event to switch audio output with jgmenu)
+
 `t2ec --brightness [up] | [down] | [<level>]`
 
 `t2ec --lbrightness [up] | [down] | [<level>]` (for 'light-git' optional package)
@@ -236,8 +238,12 @@ If you specified `<city_id>` in the main command, to see relevant data in the de
 
 ## CHANGELOG
 
-v1.1-3 Fix to vulnerability causing ValueError on numeric field names in openwathermap JSON
+v1.3-1 [S]unrise/sunset panel item added; temperature units formatting altered.
 
-v1.1-2 Error handling for locale.getdefaultlocale() TypeError in the weather.py script
+v1.2-1 The `t2ec --paswitch` command added. It creates jgmenu to switch PulseAudio output.
+
+v1.1-3 Fix to vulnerability causing ValueError on numeric field names in openwathermap JSON.
+
+v1.1-2 Error handling for locale.getdefaultlocale() TypeError in the weather.py script.
 
 v1.1-1 Initial release as a separate project.
