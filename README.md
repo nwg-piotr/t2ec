@@ -211,6 +211,17 @@ _weather = Pogoda w
 
 for "Weather in" in Polish.
 
+#### Sunrise/sunset in the panel:
+
+Since v1.3 it's possible to display sunrise and sunset in the panel. Use the [S] in the command, e.g.:
+
+`t2ec --weather -IcstS` 
+
+It makes sense to edit `~/.t2ecol/weatherrc` and replace `Sunrise` and `Sunset` with appropriate glyphs. 
+The symbols below come from the icomoon font. 
+
+![t2ec --weather](http://nwg.pl/wiki-tint2-executors/t2ec-weather-IS.png)
+
 ### Overriding weatherrc settings:
 
 If you need to see data for more than one location, you may override default `~/.t2ec/weatherrc` config setting:
