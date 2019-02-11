@@ -88,7 +88,7 @@ def main():
     request_url = "http://api.openweathermap.org/data/2.5/weather?id=" + settings.city_id + "&appid=" + \
                   settings.api_key + "&units=" + settings.units + "&lang=" + settings.lang
     try:
-        response = subprocess.check_output("wget -qO- '" + request_url + "'", shell=True)
+        response = subprocess.check_output("wget -o /dev/null -qO- '" + request_url + "'", shell=True)
 
     except subprocess.CalledProcessError as exitcode:
         if name is None:
