@@ -238,6 +238,8 @@ If you specified `<city_id>` in the main command, to see relevant data in the de
 
 ## CHANGELOG
 
+v1.3-2 Bug in t2ec --weather command hopefully fixed: unwanted accidental `~/wget-log*` files are now being sent to /dev/null.
+
 v1.3-1 [S]unrise/sunset panel item added; temperature units formatting altered.
 
 v1.2-1 The `t2ec --paswitch` command added. It creates jgmenu to switch PulseAudio output.
