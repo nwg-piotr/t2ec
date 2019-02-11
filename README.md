@@ -238,14 +238,14 @@ If you specified `<city_id>` in the main command, to see relevant data in the de
 
 ## CHANGELOG
 
-v1.3-2 Bug in `t2ec --weather` command hopefully fixed: unwanted accidental `~/wget-log*` files are now being sent to /dev/null.
+- v1.3-2 Bug in `t2ec --weather` command hopefully fixed: unwanted accidental `~/wget-log*` files are now being sent to /dev/null.
 
-v1.3-1 [S]unrise/sunset panel item added; temperature units formatting altered.
+- v1.3-1 [S]unrise/sunset panel item added; temperature units formatting altered.
 
-v1.2-1 The `t2ec --paswitch` command added. It creates jgmenu to switch PulseAudio output.
+- v1.2-1 The `t2ec --paswitch` command added. It creates jgmenu to switch PulseAudio output.
 
-v1.1-3 Fix to vulnerability causing ValueError on numeric field names in openwathermap JSON.
+- v1.1-3 Fix to vulnerability causing ValueError on numeric field names in openwathermap JSON.
 
-v1.1-2 Error handling for locale.getdefaultlocale() TypeError in the weather.py script.
+- v1.1-2 Error handling for locale.getdefaultlocale() TypeError in the weather.py script.
 
-v1.1-1 Initial release as a separate project.
+- v1.1-1 Initial release as a separate project.
