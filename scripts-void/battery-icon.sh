@@ -24,7 +24,11 @@ if [[ $bat ]]; then
         if [[ "$state" == *"Unknown"* ]]; then
             level=${level::-1}
         else
-            level=${level::-2}
+            if [[ "$level" == "100%" ]]; then
+              level=${level::-1}
+            else
+              level=${level::-2}
+            fi
         fi
     fi
 
