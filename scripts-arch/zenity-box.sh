@@ -27,7 +27,7 @@ if [[ $1 == bri* ]]; then
     fi
 
 elif [[ $1 == vol* ]]; then
-    lvl=$(amixer sget Master | grep 'Right:' | awk -F'[][]' '{ print $2 }')
+    lvl=$(amixer sget Master | grep '%' | awk -F'[][]' '{ print $2 }')
     lvl=${lvl::-1}
     lvl=$(rof -P zenity zenity --scale --value ${lvl} --title "Volume" --text "Set master volume level")
     if [[ ${lvl} ]]; then
